@@ -1,0 +1,96 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+.icon{
+display:inline-block;
+font:normal normal normal 14px/1 FontAwesome;
+font-size:inherit;text-rendering:auto;}
+
+
+.art_icon:before{content:"\f00a"}
+
+.user_icon:before{content:"\f007"}
+
+
+.icon:hover{color:green;transform:scale(1.7);}
+
+.maximize:hover{transform:scale(1.1);}
+
+.media_contact{
+background-color:white;
+height:45px;
+box-shadow:0 5px 5px 0 rgba(0,0,0,0.16),0 10px 10px 0 rgba(0,0,0,0.12);
+background-color: white;
+
+}
+
+.menu_icon:before{content:"\f0c9"}
+
+.home_icon:before{content:"\f015"}
+
+.quiz_icon:before{content:"\f0f6"}
+
+.nav{position:fixed;width:100%;z-index:1;top:0;background-color:white;}
+
+.small_menu{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+
+.box .item{padding:8px 16px;float:left;width:auto;border:none;outline:none;display:block}
+
+.box .button{white-space:normal}
+
+.bar-block.center .item{text-align:center}
+
+.box:before,.box:after{content:"";display:table;clear:both}
+
+.box .item{padding:8px 16px;float:left;width:auto;border:none;outline:none;display:block}
+
+.bar-block .item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;outline:none;white-space:normal;float:none}
+
+
+.black,.hover-black:hover{color:#fff!important;background-color:#000!important}
+
+
+.box{
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	width:100%;overflow:hidden;}
+
+.nav .button:hover{color:black;background-color:#b3ff66;}
+
+.button
+{
+	border:none;
+	display:inline-block;
+	outline:0;
+	padding:8px 16px;
+	vertical-align:middle;
+	overflow:hidden;
+	color:inherit;
+	text-align:center;
+	cursor:pointer;
+	white-space:nowrap;
+}
+
+
+.button:disabled{cursor:not-allowed;opacity:0.3}
+
+
+.box{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+
+.animation{position:relative;animation:open_left 0.4s}
+
+@keyframes open_left{ from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
+.right{float:right!important}
+
+
+@media (min-width:993px){.hide-menu{display:none!important}}
+
+@media (max-width:992px) and (min-width:601px){.hide-menu{display:none!important}}
+
+@media (max-width:600px){	
+.menu-large{display:none!important}}
+

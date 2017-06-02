@@ -1,0 +1,17 @@
+
+.containerPhobiGroups{padding-top:32px ;padding-bottom:32px ;padding:10px;}
+
+.borduraPhobiGroups{border-bottom:1px solid #ccc;padding-top:16px ;padding-bottom:16px; }
+
+.singleContactDiv{margin-left:10px;float:left;width:22.99999% }
+
+.marginPhobi{margin-bottom:16px }
+ 
+.block{display:block;width:100%}
+
+.containerPhobiGroups:after,.containerPhobiGroups:before{content:"";display:table;clear:both}
+
+.paddingPhobi:after,.paddingPhobi:before{content:"";display:table;clear:both}
+
+.paddingPhobi{margin-left:40px;padding:0 8px}
+

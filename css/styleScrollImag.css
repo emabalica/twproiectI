@@ -1,0 +1,28 @@
+
+
+ 
+.recent_art{max-width:980px;margin:auto;position:absolute; margin-top:100px;}
+
+.content{position:relative}
+
+
+.arrow_left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);color:white;background-color:#000!important;}
+
+.arrow_right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);color:white;background-color:#000!important;}
+
+.change{
+	width:720px;
+	height:365px;
+}
+
+.title{
+    position:absolute;
+	padding:0.01em 16px;
+	left:0;bottom:0;
+	font-size:18px!important;
+	color:#fff!important;
+	background-color:#000!important;
+}
+
+
+.social_media{margin-top:16px!important;margin-bottom:16px!important;text-align:center!important;font-size:24px!important;}
