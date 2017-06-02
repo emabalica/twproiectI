@@ -14,8 +14,7 @@ img_path varchar2(200),
 art_path varchar2(300),
 date_art date,
 nr_reads int,
-resume_art  varchar2(400)
-)
+resume_art  varchar2(400))
 
 CREATE OR REPLACE TRIGGER profile_picture
 after insert ON userstw
