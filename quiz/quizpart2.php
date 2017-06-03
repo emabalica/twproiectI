@@ -1,4 +1,4 @@
-<?php include '../phpDocs/dbcon.php'?>
+<?php include '../phpDocs/dbcon.php'; $_SESSION['alegere1']=$_POST['group1'];?>
 
 <!DOCTYPE html>
 

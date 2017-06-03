@@ -14,5 +14,7 @@ unset($heights);
 unset($spider);
 unset($noFear);
 
+		header("location:../home/home.php"); 
+
   
 ?>

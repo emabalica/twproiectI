@@ -7,74 +7,77 @@ if (!$conn) {
    exit;
 }
 
+ $noFear=0;
 
  $_SESSION['alegere8']=$_POST['group8'];
  
 
- if($_SESSION['alegere3']='scream')
-	 $spider=20;
- if($_SESSION['alegere3']='shiver')
-	 $spider=15;
- if($_SESSION['alegere3']='indifferent')
-	  $noFear=1;
+ if(strcmp($_SESSION['alegere3'],'scream')==0)
+	 $spider=10;
+ if(strcmp($_SESSION['alegere3'],'shiver')==0)
+	 $spider=5;
+ if(strcmp($_SESSION['alegere3'],'indifferent')==0)
+	 $noFear=1;
+  if(strcmp($_SESSION['alegere3'],'disgusted')==0)
+	 $noFear=1;
+ 
 
 
  
  
- if($_SESSION['alegere4']='jittery')
-	 $heights=20;
- if($_SESSION['alegere4']='fear')
-	 $heights=15;
- if($_SESSION['alegere4']='joy')
+ if(strcmp($_SESSION['alegere4'],'jittery')==0)
+	 $heights=5;
+ if(strcmp($_SESSION['alegere4'],'fear')==0)
+	 $heights=10;
+ if(strcmp($_SESSION['alegere4'],'joy')==0)
 	  $noFear=$noFear+1;
-  if($_SESSION['alegere4']='excited')
+  if(strcmp($_SESSION['alegere4'],'excited')==0)
 	  $noFear=$noFear+1;
 
  
  
   
- if($_SESSION['alegere5']='snuggle')
-	 $dark=15;
- if($_SESSION['alegere5']='scream')
-	 $dark=20;
- if($_SESSION['alegere5']='noLight')
-	  $noFear=$noFear+1;
-  if($_SESSION['alegere5']='indif')
-	  $noFear=$noFear+1;
+ if(strcmp($_SESSION['alegere5'],'snuggle')==0)
+	 $dark=5;
+ if(strcmp($_SESSION['alegere5'],'scream')==0)
+	 $dark=10;
+ if(strcmp($_SESSION['alegere5'],'noLight')==0)
+	 $noFear=$noFear+1;
+  if(strcmp($_SESSION['alegere5'],'indif')==0)
+	 $noFear=$noFear+1;
 
   
- if($_SESSION['alegere6']='lanterns')
-	 $dark=$dark+10;
- if($_SESSION['alegere6']='spray')
+ if(strcmp($_SESSION['alegere6'],'lanterns')==0)
+	 $dark=$dark+20;
+ if(strcmp($_SESSION['alegere6'],'spray')==0)
 	 $spider=$spider+10;
- if($_SESSION['alegere6']='height')
-	 $heights=$heights+10;
- if($_SESSION['alegere6']='enjoy')
+ if(strcmp($_SESSION['alegere6'],'height')==0)
+	 $heights=$heights+15;
+ if(strcmp($_SESSION['alegere6'],'enjoy')==0)
+	  $noFear=$noFear+1;
+ 
+ 
+  
+ if(strcmp($_SESSION['alegere7'],'leave')==0)
+	 $spider=$spider+20;
+  if(strcmp($_SESSION['alegere7'],'noFear')==0)
+	  $noFear=$noFear+1;
+  if(strcmp($_SESSION['alegere7'],'no')==0)
 	  $noFear=$noFear+1;
 
  
- 
   
- if($_SESSION['alegere7']='leave')
-	 $spider=$spider+10;
-  if($_SESSION['alegere7']='noFear')
+ if(strcmp($_SESSION['alegere8'],'swim')==0)
+	 $snake=20;
+ if(strcmp($_SESSION['alegere8'],'photo')==0)
 	  $noFear=$noFear+1;
-  if($_SESSION['alegere7']='no')
-	  $noFear=$noFear+1;
-
- 
-  
- if($_SESSION['alegere8']='swim')
-	 $snake=10;
- if($_SESSION['alegere8']='photo')
-	  $noFear=$noFear+1;
-  if($_SESSION['alegere8']='race')
+  if(strcmp($_SESSION['alegere7'],'race')==0)
 	  $noFear=$noFear+1;
  
-	if($noFear!=6)
-		$noFear=0;
-	else
+	if($noFear==6)
 		$noFear=100;
+	else
+		$noFear=0;
 	
 ?>
 
@@ -132,7 +135,7 @@ if (!$conn) {
 </div>
 
 <nav class="small_menu bar-block black box animation hide-menu" style="display:none" id="menu">
-  <a href=""        onclick="close_menu()" class=" item button ">×</a>
+  <a href=""         class=" item button ">×</a>
   <a href="http://localhost/siteFinal/home/home.php"   onclick="close_menu()" class=" item button">ABOUT</a>
   <a href="http://localhost/siteFinal/articles/articles.php" onclick="close_menu()" class=" item button">ARTICLES</a>
   <a href="http://localhost/siteFinal/phobias.php" onclick="close_menu()" class=" item button">PHOBIAS</a>
@@ -146,7 +149,7 @@ if (!$conn) {
     <div class="form-content" style="max-width:600px">
 
       <div style="text-align:center!important"><br>
-        <span onclick="redirect_home()" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
+        <span onclick="location.href = 'http://localhost/siteFinal/quiz/unset.php'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
       </div>
 
       <form style="padding:0.01em 16px" action="quizpart8.php" method='post'>
@@ -386,7 +389,7 @@ document.body.onload=function () {
   var id4 = setInterval(frame, 50);
   function frame() {
    var value=<?php echo $dark; ?>;
-   if (width >= 90) {
+   if (width >= value) {
       clearInterval(id);
     } else{
       width++; 
