@@ -105,7 +105,6 @@
 
     </div>
   </div>
-</div>
 
 <!--QUIZ FORM-->
  <div id="quizpart1" class="form">
@@ -138,32 +137,38 @@
 <!--ADD FORM-->
 <div id="post" class="form">
     <div class="form-content" style="max-width:600px">
+
       <div style="text-align:center!important"><br>
         <span onclick="document.getElementById('post').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
       </div>
-	  
-			<form style="padding:0.01em 16px" action="../admin/post.php" method='post'>
-				<div style="margin-top:16px!important;margin-bottom:16px!important">
-					<label><b>Select the type of posting:</b></label>
-						<select class="select" name="art_type">
-							<option>Phobia</option>
-							<option>Article</option>
-						</select>
-					<label><b>Title</b></label>
-							<input class="text" type="text" placeholder="title" name="title" required>
-					<label><b>Date</b></label>
-							<input class="text" type="text" placeholder="date" name="date" required>
-					<label><b>Path img</b></label>
-							<input class="text" type="text" placeholder="img" name="img" required>
-					<label><b>Preview</b></label>
-							<textarea class="text" type="text" placeholder="preview" name="preview" required></textarea>
-					<label><b>Article</b></label>
-							<textarea style="height:50px;" class="text" type="text"  name="article" required></textarea>
-					<button class="button decorate " type="submit">Post</button>
-				</div>
-			</form>
-	  </div>
+     
+	    <form style="padding:0.01em 16px" action="post.php" method='post'>
+        <div style="margin-top:16px!important;margin-bottom:16px!important">
+          <label><b>Select the type of posting:</b></label>
+          <select  class="select" name="art_type">
+          <option>Phobia</option>
+          <option>Article</option>
+          </select>
+		  <label><b>Title</b></label>
+          <input class="text" type="text" placeholder="title" name="title" required>
+          <label><b>Date</b></label>
+          <input class="text" type="text" placeholder="date" name="date" required>
+          <label><b>Path img</b></label>
+          <input class="text" type="text" placeholder="img" name="img" required>
+		  <label><b>Preview</b></label>
+          <textarea class="text" type="text" placeholder="preview" name="preview" required></textarea>
+		  <label><b>Article</b></label>
+          <textarea style="height:50px;" class="text" type="text"  name="article" required></textarea>
+		   
+          <button class="button decorate " type="submit">Post</button>
+		</div>
+      </form>
+
+
+    </div>
   </div>
+
+
 
 
 
@@ -177,7 +182,7 @@
 	    <form style="padding:0.01em 16px" action="../admin/delete.php" method='post'>
 				<div style="margin-top:16px!important;margin-bottom:16px!important">
 					<label><b>Select the type of posting:</b></label>
-						<select> class="select" id="sel1">
+						<select class="select" id="sel1">
 							<option>Phobia</option>
 							<option>Article</option>
 						</select>

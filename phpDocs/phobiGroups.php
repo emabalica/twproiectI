@@ -1,6 +1,14 @@
 <?php //phobiGroups.php
 
 		if(isset($_SESSION['login_user'])){
+			
+		$query=oci_parse($conn,'select * from userstw where user_id=:id');
+		oci_bind_by_name($query,':id',$_SESSION['login_user']);
+		oci_execute($query);
+		$row1 = oci_fetch_array($query, OCI_RETURN_NULLS+OCI_ASSOC);
+		$role=$row1['ROLE'];
+			
+		if (strcmp($role,'user')==0){
 
 			print "<div class=' containerPhobiGroups' >
 						<h3 class='borduraPhobiGroups ' style='color:green'>Treat your phobia</h3>
@@ -64,5 +72,6 @@
 						</div>";}
 		
 		print "</div>";}
+		}
  ?>
   

@@ -60,7 +60,8 @@ if (!$conn) {
 		  if(strcmp($role,"admin")==0){
 		  print"
 		  <a onclick=\"document.getElementById('delete').style.display='block'\" class=' item button'><i class='icon  quiz_icon'></i> DELETE POST</a>
-          <a onclick=\"document.getElementById('post').style.display='block'\" class=' item button'><i class='icon user_icon'></i>ADD POST</a>";
+          <a onclick=\"document.getElementById('post').style.display='block'\" class=' item button'><i class='icon user_icon'></i>ADD POST</a>
+		  <a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
 		  }
 	  }
 	ELSE

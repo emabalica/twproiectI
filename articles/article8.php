@@ -66,7 +66,8 @@
 
   if(strcmp($role,'admin')==0){
 		print"	<a onclick=\'document.getElementById('delete').style.display='block';\' onclick=\'close_menu()\' class='item button'>DELETE POST</a>
-				<a onclick=\'document.getElementById('post').style.display='block';\' onclick=\'close_menu()\' class='item button'>ADD POST</a>";}
+				<a onclick=\'document.getElementById('post').style.display='block';\' onclick=\'close_menu()\' class='item button'>ADD POST</a>
+				<a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
    }
    
   else{
@@ -174,7 +175,7 @@
 	    <form style="padding:0.01em 16px" action="phpDocs/delete.php" method='post'>
 				<div style="margin-top:16px!important;margin-bottom:16px!important">
 					<label><b>Select the type of posting:</b></label>
-						<select> class="select" id="sel1">
+						<select class="select" id="sel1">
 							<option>Phobia</option>
 							<option>Article</option>
 						</select>
