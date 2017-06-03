@@ -82,13 +82,13 @@ if (!$conn) {
 <html>
 <title>Phobia-Free</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/styleScrollImag.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/toparticles.css">
-<link rel="stylesheet" href="css/articole_layout.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/form_no_click.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/styleScrollImag.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/toparticles.css">
+<link rel="stylesheet" href="../css/articole_layout.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/form_no_click.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 #myProgress {
@@ -115,12 +115,12 @@ if (!$conn) {
 
 <div class="nav">
   <div class="box" > 
-    <img src="photos/FREE-PHOBIA.png" style="width:200px; padding-left:20px;">
+    <img src="../photos/FREE-PHOBIA.png" style="width:200px; padding-left:20px;">
 	
     <div class="right menu-large">
-      <a href="http://localhost/site/home.php" class=" item button "><i class="icon home_icon" ></i>ABOUT</a>
-      <a href="http://localhost/site/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
-      <a href="http://localhost/site/phobias.php" class=" item button"><i class="icon art_icon"></i> PHOBIAS</a>
+      <a href="http://localhost/siteFinal/home/home.php" class=" item button "><i class="icon home_icon" ></i>ABOUT</a>
+      <a href="http://localhost/siteFinal/articles/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
+      <a href="http://localhost/siteFinal/phobias.php" class=" item button"><i class="icon art_icon"></i> PHOBIAS</a>
       <a onclick="document.getElementById('quizpart1').style.display='block'" class=" item button"><i class="icon  quiz_icon"></i> PHOBIA QUIZ</a>
       <a onclick="document.getElementById('form').style.display='block'" class=" item button"><i class="icon user_icon"></i> LOGIN/SINGUP</a>
     </div>
@@ -133,9 +133,9 @@ if (!$conn) {
 
 <nav class="small_menu bar-block black box animation hide-menu" style="display:none" id="menu">
   <a href=""        onclick="close_menu()" class=" item button ">×</a>
-  <a href="http://localhost/site/home.php"   onclick="close_menu()" class=" item button">ABOUT</a>
-  <a href="http://localhost/site/articles.php" onclick="close_menu()" class=" item button">ARTICLES</a>
-  <a href="http://localhost/site/phobias.php" onclick="close_menu()" class=" item button">PHOBIAS</a>
+  <a href="http://localhost/siteFinal/home/home.php"   onclick="close_menu()" class=" item button">ABOUT</a>
+  <a href="http://localhost/siteFinal/articles/articles.php" onclick="close_menu()" class=" item button">ARTICLES</a>
+  <a href="http://localhost/siteFinal/phobias.php" onclick="close_menu()" class=" item button">PHOBIAS</a>
   <a onclick="document.getElementById('quizpart1').style.display='block';close_menu()" class=" item button">PHOBIA QUIZ</a>
   <a  class=" item button">LOGIN/SINGUP</a>
 </nav>
@@ -154,6 +154,7 @@ if (!$conn) {
        
 	   
 	   <h2>What Phobia Do You Have?</h2>
+		
 		
 		<h3>Your Result: Achluophobia- Fear of darkness.</h3>
 	   <div id='myProgress'>
@@ -209,7 +210,7 @@ $results = oci_parse($conn, $query);
 while($row1 = oci_fetch_array($results, OCI_RETURN_NULLS+OCI_ASSOC)){
 
 print "<div class='content mySlides'>
-		<img class='change' src='".$row1['IMG_PATH']."' style='width:100%'>
+		<img class='change' src='../".$row1['IMG_PATH']."' style='width:100%'>
         <div class='title'>".$row1['TITLE_ART']."
 		</div></div>";
 }
@@ -234,7 +235,7 @@ print "<div class='content mySlides'>
 
 <!-- Most read art -->
 <div class="bestart" style="padding:40px 16px" >
-  <img src="photos/bestarticles.png" style="width:30%;padding-left:35%;">
+  <img src="../photos/bestarticles.png" style="width:30%;padding-left:35%;">
   <div class="container " style="margin-top:64px">  
   
   <?php
@@ -247,7 +248,7 @@ while($row1 = oci_fetch_array($results, OCI_RETURN_NULLS+OCI_ASSOC)){
 	 
 	print "<div class='individual_art '>
       <div class='bottomarticol'>
-        <img src='".$row1['IMG_PATH']."' style='width:100%' class='change2'>
+        <img src='../".$row1['IMG_PATH']."' style='width:100%' class='change2'>
         <div class='bestart'>
           <a href='".$row1['ART_PATH']."' style='color:#b3ff66'><h3>".$row1['TITLE_ART']."</h3></a>
           <p class='opacitate'>".$row1['DATE_ART']."</p>
@@ -279,7 +280,7 @@ while($row1 = oci_fetch_array($results, OCI_RETURN_NULLS+OCI_ASSOC)){
 					
     </div>
     <div class="continut_articol" style="margin-top:80px;">
-      <img class="image " src="photos/relax.gif" alt="Buildings" width="700" height="394">
+      <img class="image " src="../photos/relax.gif" alt="Buildings" width="700" height="394">
     </div>
 	<div style="float:left ;padding-right:25px;">
 	
@@ -346,7 +347,7 @@ function close_menu() {
 }
 
 function redirect_home(){
-	window.location.href="http://localhost/site/home.php";
+	window.location.href="http://localhost/siteFinal/home/home.php";
 }
 
 var index = 1;
@@ -385,7 +386,7 @@ document.body.onload=function () {
   var id4 = setInterval(frame, 50);
   function frame() {
    var value=<?php echo $dark; ?>;
-   if (width >= value) {
+   if (width >= 90) {
       clearInterval(id);
     } else{
       width++; 
@@ -427,24 +428,6 @@ clearInterval(id4);
 
  
 </script>
-
-<?php
-
-unset($_SESSION['alegere1']);
-unset($_SESSION['alegere2']);
-unset($_SESSION['alegere3']);
-unset($_SESSION['alegere4']);
-unset($_SESSION['alegere5']);
-unset($_SESSION['alegere6']);
-unset($_SESSION['alegere7']);
-unset($_SESSION['alegere8']);
-unset($dark);
-unset($heights);
-unset($spider);
-unset($noFear);
-
-  
-?>
 
 </body>
 </html>

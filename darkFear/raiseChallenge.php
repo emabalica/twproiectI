@@ -1,6 +1,6 @@
 <?php
 	  //verific stadiu provocare user
-	  SESSION_START();
+SESSION_START();
 
 
 $conn = oci_connect("system","STUDENT","localhost/orcl");

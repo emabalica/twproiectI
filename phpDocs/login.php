@@ -32,7 +32,7 @@
 		header("location:../home/home.php"); }
 
 	
-		oci_close($conn); 
+		oci_close($conn); // Closing Connection
 ?>
 
 
