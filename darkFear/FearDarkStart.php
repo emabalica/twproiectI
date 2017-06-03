@@ -63,7 +63,7 @@ if (!$conn) {
           <a onclick=\"document.getElementById('post').style.display='block'\" class=' item button'><i class='icon user_icon'></i>ADD POST</a>
 		  <a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
 		  }
-	  }
+	  
 	ELSE
 	
 	  PRINT "<a onclick=\"document.getElementById('quizpart1').style.display='block'\" class=' item button'><i class='icon quiz_icon'></i> PHOBIA QUIZ</a>
