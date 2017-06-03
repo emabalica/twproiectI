@@ -28,7 +28,7 @@
 	
 		<div class="right menu-large">
 		<a href="http://localhost/siteFinal/home/home.php" class=" item button "><i class="icon home_icon" ></i>ABOUT</a>
-		<a href="http://localhost/siteFinal/articles/articles/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
+		<a href="http://localhost/siteFinal/articles/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
 		<a href="http://localhost/siteFinal/phobias.php" class=" item button"><i class="icon art_icon"></i> PHOBIAS</a>
 	  
 		<?php include '../phpDocs/userOption.php'?>
@@ -43,7 +43,7 @@
 <nav class="small_menu bar-block black box animation hide-menu" style="display:none" id="menu">
   <a href="" onclick="close_menu()" class=" item button ">×</a>
   <a href="http://localhost/siteFinal/home/home.php"   onclick="close_menu()" class=" item button">ABOUT</a>
-  <a href="http://localhost/siteFinal/articles.php" onclick="close_menu()" class=" item button">ARTICLES</a>
+  <a href="http://localhost/siteFinal/articles/articles.php" onclick="close_menu()" class=" item button">ARTICLES</a>
   <a href="http://localhost/siteFinal/phobias.php" onclick="close_menu()" class=" item button">PHOBIAS</a>
   
  
