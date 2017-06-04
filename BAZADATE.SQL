@@ -1,10 +1,10 @@
-﻿   CREATE TABLE USERSTW
+﻿  CREATE TABLE USERSTW
    (	USER_ID NUMBER NOT NULL PRIMARY KEY, 
 	USER_PASSWORD VARCHAR2(50) NOT NULL , 
 	USER_NAME VARCHAR2(100), 
 	MAIL VARCHAR2(100), 
 	ROLE VARCHAR2(30), 
-	NR_STELUTE );
+	NR_STELUTE )
 
 
 	create table myarticles(
@@ -15,7 +15,7 @@ art_path varchar2(300),
 date_art date,
 nr_reads int,
 resume_art  varchar2(400)
-);
+)
 
 CREATE OR REPLACE TRIGGER profile_picture
 after insert ON userstw
@@ -166,40 +166,3 @@ OPEN lista_ID ; -- aceste valori pot fi calculate de codul PLSQL
   id4:=v_lista(4); 
   
 end best_read;
-
-
-drop table myphobias;
-	create table myphobias(
-id_fob int not null primary key ,
-title_fob varchar2(200),
-img_path varchar2(200),
-fob_path varchar2(300),
-date_fob date,
-nr_reads int
-);
-
-create or replace procedure nr_fob(nr OUT int) as
- begin
- select count(*) into nr from myphobias;
- nr:=nr+1;
-end nr_fob;
- 
- insert into myarticles values(1,'Performance Anxiety','photos/fear1.png','http://localhost/twproiectI-master/fobii/fear1.php','07-MAY-17',12);
-  
- insert into myarticles values(2,'Fear of Flying','photos/fearFlying.png','http://localhost/twproiectI-master/fobii/fear2.php','12-June-17',10);
-  
- insert into myarticles values(3,'Claustrophobia','photos/Claustrophobia.png','http://localhost/twproiectI-master/fobii/fear3.php','17-MAY-17',19);
-  
- insert into myarticles values(4,'Hypochondria','photos/Hypochondria.png','http://localhost/twproiectI-master/fobii/fear4.php','03-MAY-17',12);
-  
- insert into myarticles values(5,'Dental Phobia','photos/DentalPhobia.png','http://localhost/twproiectI-master/fobii/fear5.php','15-MAY-17',2);
-  
- insert into myarticles values(6,'Blood/Injection Phobia','photos/InjectionPhobia.png','http://localhost/twproiectI-master/fobii/fear6.php','02-MAY-17',21);
-  
- insert into myarticles values(7,'Fear of Heights','photos/FearofHeights.png','http://localhost/twproiectI-master/fobii/fear7.php','07-Jul-17',64);
-  
- insert into myarticles values(8,'Animal and Insect Phobias','photos/AnimalandInsectPhobias.png','http://localhost/twproiectI-master/fobii/fear8.php','27-MAY-17',32);
-  
- insert into myarticles values(9,'Fear of Death','photos/FearofDeath.png','http://localhost/twproiectI-master/fobii/fear9.php','04-APR-17',31);
-  
- insert into myarticles values(10,'Fear of Snakes Phobia – Ophidiophobia','photos/snake.png','http://localhost/twproiectI-master/fobii/fear10.php','08-MAY-17',54);

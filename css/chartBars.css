@@ -1,0 +1,138 @@
+
+#q-graph {
+  display: block; /* fixes layout wonkiness in FF1.5 */
+  position: relative; 
+  width: 900px; 
+  height: 300px;
+  margin: 1.1em 0 0; 
+  padding: 0;
+  background: transparent;
+  font-size: 11px;
+}
+
+ caption {
+  caption-side: top; 
+  width: 800px;
+  letter-spacing: .5px;
+  top: -40px;
+  position: relative; 
+  z-index: 10;
+  font-weight: bold;
+}
+
+ tr, th, td { 
+  position: absolute;
+  bottom: 0; 
+  width: 150px; 
+  z-index: 2;
+  margin: 0; 
+  padding: 0;
+  text-align: right;
+}
+
+  
+ thead tr {
+  left: 100%; 
+  top: 50%; 
+  bottom: auto;
+  margin: -2.5em 0 0 5em;}
+
+  thead th {
+  width: 7.5em; 
+  height: auto; 
+  padding: 0.5em 1em;
+}
+ thead th.under18 {
+  top: 0; 
+  left: 0; 
+  line-height: 2;
+}
+ thead th.to24 {
+  top: 2.75em; 
+  line-height: 2;
+  left: 0; 
+}
+
+ thead th.to30 {
+  top: 5.75em; 
+  line-height: 2;
+  left: 0; 
+}
+
+
+ thead th.to40 {
+  top: 8.75em; 
+  line-height: 2;
+  left: 0; 
+}
+
+
+ tbody tr {
+  height: 296px;
+  padding-top: 2px;
+  border-right: 1px dotted #C4C4C4; 
+  color: #AAA;
+}
+#q1 {left: 0;}
+#q2 {left: 270px;}
+#q3 {left: 540px;}
+
+ tbody th {bottom: -1.75em; vertical-align: top;
+font-weight: normal; color: #333;}
+
+#q-graph .bar {
+  width: 60px; 
+  border: 1px solid; 
+  border-bottom: none; 
+  color: #000;
+}
+#q-graph .bar p {
+  opacity: .4;
+}
+.under18 {
+  left: 13px; 
+  background-color: #339900;
+  border-color: transparent;
+}
+.to24 {
+  left: 77px; 
+  background-color: #33ff33;
+  border-color: transparent;
+}
+
+.to30 {
+  left: 141px; 
+  background-color: #4ce600;
+  border-color: transparent;
+}
+
+.to40 {
+  left: 205px; 
+  background-color: #77ff33;
+  border-color: transparent;
+}
+
+#ticks {
+  position: relative; 
+  top: -300px; 
+  left: 2px;
+  width: 596px; 
+  height: 300px; 
+  z-index: 1;
+  margin-bottom: -300px;
+  font-size: 10px;
+  font-family: "fira-sans-2", Verdana, sans-serif;
+}
+
+#ticks .tick {
+  position: relative; 
+  border-bottom: 1px dotted #C4C4C4; 
+  width: 900px;
+}
+
+#ticks .tick p {
+  position: absolute; 
+  left: -5em; 
+  top: -0.8em; 
+  margin: 0 0 0 0.5em;
+}

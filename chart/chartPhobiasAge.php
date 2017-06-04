@@ -1,4 +1,4 @@
-<?php include '../phpDocs/dbcon.php'?> <!--Physical Exercise-->
+<?php include '../phpDocs/dbcon.php'?> <!--Relaxation-->
 
 <!DOCTYPE html>
 
@@ -14,8 +14,10 @@
 	<link rel="stylesheet" href="../css/articole_layout.css">
 	<link rel="stylesheet" href="../css/footer.css">
 	<link rel="stylesheet" href="../css/form.css">
+	<link rel="stylesheet" href="../css/chartBars.css">
 	<link rel="stylesheet" href="../phobia_groups.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Chart.js"></script>
 </head>
 <body>
 
@@ -67,7 +69,6 @@
   if(strcmp($role,'admin')==0){
 		print"	<a onclick=\'document.getElementById('delete').style.display='block';\' onclick=\'close_menu()\' class='item button'>DELETE POST</a>
 				<a onclick=\'document.getElementById('post').style.display='block';\' onclick=\'close_menu()\' class='item button'>ADD POST</a>
-				<a href='http://localhost/siteFinal/admin/charts.php' class='item button'><i class='icon user_icon'></i>CHARTS</a>
 				<a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
 
    }
@@ -82,7 +83,7 @@
 
 
 <!--LOGIN/SINGUP FORM-->
-<div id="form" class="form">
+<div id="form" class="form" style='z-index:15;'>
     <div class="form-content" style="max-width:600px">
 
       <div style="text-align:center!important"><br>
@@ -105,10 +106,10 @@
 
     </div>
   </div>
-</div>
 
+  
 <!--QUIZ FORM-->
- <div id="quizpart1" class="form">
+ <div id="quizpart1" class="form" style='z-index:15;'>
     <div class="form-content" style="max-width:600px">
       <div style="text-align:center!important">
 			<span onclick="document.getElementById('quizpart1').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
@@ -136,7 +137,7 @@
 
 
 <!--ADD FORM-->
-<div id="post" class="form">
+<div id="post" class="form" style='z-index:15;'>
     <div class="form-content" style="max-width:600px">
       <div style="text-align:center!important"><br>
         <span onclick="document.getElementById('post').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
@@ -168,7 +169,7 @@
 
 
 <!--DELETE FORM-->
-<div id="delete" class="form">
+<div id="delete" class="form" style='z-index:15;'>
     <div class="form-content" style="max-width:600px">
       <div style="text-align:center!important"><br>
         <span onclick="document.getElementById('delete').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
@@ -189,18 +190,42 @@
     </div>
  </div>
 
+<!--Valori pentru chart-->
+<?php
+
+//dark
+$id=1;
+$stmt=oci_parse($conn,'BEGIN count_phobi_age(:id,:dark1,:dark2,:dark3);END;');
+		oci_bind_by_name($stmt,':id',$id);
+		oci_bind_by_name($stmt,':dark1',$dark1);
+		oci_bind_by_name($stmt,':dark2',$dark2);
+		oci_bind_by_name($stmt,':dark3',$dark3);
+		oci_execute($stmt);
+
+//spiders
+$id=2;
+$stmt=oci_parse($conn,'BEGIN count_phobi_age(:id,:spiders1,:spiders2,:spiders3);END;');
+		oci_bind_by_name($stmt,':id',$id);
+		oci_bind_by_name($stmt,':spiders1',$spiders1);
+		oci_bind_by_name($stmt,':spiders2',$spiders2);
+		oci_bind_by_name($stmt,':spiders3',$spiders3);
+		oci_execute($stmt);
+		
+//heights
+$id=3;
+$stmt=oci_parse($conn,'BEGIN count_phobi_age(:id,:heights1,:heights2,:heights3);END;');
+		oci_bind_by_name($stmt,':id',$id);
+		oci_bind_by_name($stmt,':heights1',$heights1);
+		oci_bind_by_name($stmt,':heights2',$heights2);
+		oci_bind_by_name($stmt,':heights3',$heights3);
+
+		oci_execute($stmt);
+		
+?>
 
 
 
-<div class="recent_art content">
-
-		<?php include"../phpDocs/recentArticles.php" ?>
-		<button class="button arrow_left" onclick="next(-1)">&#10094;</button>
-		<button class="button arrow_right" onclick="next(1)">&#10095;</button>
-
-</div>
-
-<div class="media_contact">
+<div class="media_contact" style='margin-top:90px';>
 	<div class="social_media">
 		<i class="icon fa-facebook-official  "></i>
 		<i class="icon fa-instagram"></i>
@@ -209,76 +234,64 @@
   </div>
 </div>
 
+<div class="bestart" style="padding:40px 16px" >
+	<img src="../photos/phobiasAge.png" style="width:30%;padding-left:35%;">
+</div>
 
 <div class="_articol color" style="padding:20px 16px;margin-top:10px;">
 	<div class="row_padding borduraPhobiGroups" style="border-top:1px solid #ccc" >
-		<div class="continut_articol " >  
-				<h2>Physical Exercise</h2>
-				<p>	One of the most powerful and effective methods for reducing generalized anxiety and overcoming
-					a predisposition to panic attacks is a program of regular, vigorous exercise. You have
-					panic attacks when your body’s natural fight-or-flight reaction—the sudden surge of adrenaline
-					you experience in response to a realistic threat—becomes excessive or occurs out of
-					context. Exercise is a natural outlet for your body when it is in the fight-or-flight mode of
-					arousal. A majority of my clients who have undertaken a regular exercise program are less
-					vulnerable to panic attacks and, if they do have them, find them to be less severe. Regular
-					exercise also diminishes the tendency to experience anticipatory anxiety toward phobic situations,
-					expediting recovery from all kinds of phobias, ranging from fear of public speaking
-					to fear of being alone. </p>
-		</div>
-    <div class="continut_articol" style="margin-top:80px;">
-		<img class="image " src="../photos/articol3.png" style="width:600px;margin-left:90px;" >
-    </div>
-	
-	<div style="float:left ;padding-right:25px;">								
-			<h3>Preparing for a Fitness Program?</h3>
-				<p>	If you’ve decided you would like to get more exercise, you need to ask yourself whether
-					you are fully ready to do so. There are certain physical conditions that limit the amount and
-					intensity of exercise you should undertake. If your answer to any of the questions below is
-					yes, be sure to consult with your physician before beginning any exercise program. He or she
-					may recommend a program of restricted or supervised exercise appropriate to your needs.
-				</p>
-				<p>	Some individuals are reluctant to take up exercise because the state of physiological
-					arousal accompanying vigorous exercise reminds them too much of the symptoms of panic.
-					If this applies to you, you might want to start out doing forty-five minutes of walking on a
-					daily basis.
-				</p>
+		
 				
-				<p>	Or you can very gradually build up to a more vigorous level of exercise. You might try just
-					two to three minutes of jogging or cycling and then gradually increase the duration of your
-					daily exercise a minute at a time, remembering to stop every time you feel even the slightest
-					association with panic . It might also be helpful to have a support person exercise with you initially. If you feel
-					phobic about exercise, a program of gradual exposure will help you to desensitize to it in the
-					same way you would to any other phobia.
-				</p>
+		<table id="q-graph">
+<caption>Common Phobias According to Age</caption>
+<thead>
+<tr>
 
+<th class="under18"> 31 to 40 Years </th>
+<th class="to24"> 18 to 24 Years </th>
+<th class="to30"> 25 to 30 Years </th>
+<th class="to40"> under 18 years </th>
+</tr>
+</thead>
 
-				<h3>Choosing an Exercise Program</h3>
-					<p>	Studies have found differences in the breathing patterns of anxious and shy people as
-						opposed to those who are more relaxed and outgoing. People who are fearful and shy tend
-						to breathe in a shallow fashion from their chest, while those who are more extroverted and
-						relaxed breathe more slowly, deeply, and from their abdomens.
-					</p>
-					<p>	Before reading on, take a minute to notice how you are breathing right now. Is your
-						breath slow or rapid? Deep or shallow? Does it center around a point high in your chest or
-						down in your abdomen? You might also notice changes in your breathing pattern under
-						stress versus when you are more relaxed.
-					</p>
+<tbody>
 
-					<h3>Shallow, Chest-Level Breathing</h3>
-						<p>	There are many types of exercise to choose from. Deciding what form of exercise to do depends
-							upon your objectives. For reducing generalized anxiety and/or a proneness to panic, aerobic
-							exercise such as running, brisk walking, cycling outdoors or on a stationary bike, swimming, or
-							aerobic dancing is the most effective for many individuals. Aerobic exercise requires sustained
-							activity of your larger muscles. It reduces skeletal muscle tension and increases cardiovascular
-							conditioning-the capacity of your circulatory system to deliver oxygen to your tissues and cells
-							with greater efficiency. Regular aerobic exercise will reduce stress and increase your stamina.
-						</p>
-						
-						<p>	Before reading on, take a minute to notice how you are breathing right now. Is your
-							breath slow or rapid? Deep or shallow? Does it center around a point high in your chest or
-							down in your abdomen?
-						</p>
-   </div>
+<tr class="qtr" id="q1">
+<th scope="row">Dark</th>
+<td class="under18 bar" style="height: <?php echo $dark1.'px' ?>;"><p><?php echo $dark1 ?></p></td>
+<td class="to24 bar" style="height: <?php echo $dark2.'px'; ?>"><p><?php echo $dark2 ?></p></td>
+<td class="to30 bar" style="height: <?php echo $dark3.'px'; ?>;"><p><?php echo $dark3 ?></p></td>
+<td class="to40 bar" style="height: 150px;"><p>150</p></td>
+
+</tr>
+<tr class="qtr" id="q2">
+<th scope="row">Spiders</th>
+<td class="under18 bar" style="height: <?php echo $spiders1.'px';?>;"><p><?php echo $spiders1?></p></td>
+<td class="to24 bar" style="height: <?php echo $spiders2.'px';2?>;"><p><?php echo $spiders2?></p></td>
+<td class="to30 bar" style="height: <?php echo $spiders3.'px';?>;"><p><?php echo $spiders3?></p></td>
+<td class="to40 bar" style="height: 190px;"><p>190</p></td>
+</tr>
+<tr class="qtr" id="q3">
+<th scope="row">Heights</th>
+<td class="under18 bar" style="height: <?php echo $heights1.'px';?>;"><p><?php echo $heights1?></p></td>
+<td class="to24 bar" style="height:  <?php echo $heights2.'px';?>"><p><?php echo $heights2?></p></td>
+<td class="to30 bar" style="height: <?php echo $heights3.'px';?>;"><p><?php echo $heights3?></p></td>
+<td class="to40 bar" style="height: 175px;"><p>175</p></td>
+</tr>
+
+</tbody>
+</table>
+
+<!--Values-->
+<div id="ticks">
+<div class="tick" style="height: 59px;"><p>200</p></div>
+<div class="tick" style="height: 59px;"><p>150</p></div>
+<div class="tick" style="height: 59px;"><p>100</p></div>
+<div class="tick" style="height: 59px;"><p>50</p></div>
+<div class="tick" style="height: 59px;"><p>0</p></div>
+</div>
+
+ 
   </div>
 </div>
 
@@ -288,7 +301,7 @@
 
 
 <script>
-
+	
 	var menu = document.getElementById("menu");
 
 	function open_menu() {

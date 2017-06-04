@@ -1,4 +1,4 @@
-<?php include '../phpDocs/dbcon.php'?> <!--Physical Exercise-->
+<?php include '../phpDocs/dbcon.php'?> <!--Relaxation-->
 
 <!DOCTYPE html>
 
@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="../css/form.css">
 	<link rel="stylesheet" href="../phobia_groups.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Chart.js"></script>
 </head>
 <body>
 
@@ -105,8 +106,8 @@
 
     </div>
   </div>
-</div>
 
+  
 <!--QUIZ FORM-->
  <div id="quizpart1" class="form">
     <div class="form-content" style="max-width:600px">
@@ -189,18 +190,35 @@
     </div>
  </div>
 
+<!--Valori pentru chart-->
+<?php
+
+//dark
+$id=1;
+$stmt=oci_parse($conn,'BEGIN count_phobi(:id,:dark);END;');
+		oci_bind_by_name($stmt,':id',$id);
+		oci_bind_by_name($stmt,':dark',$dark);
+		oci_execute($stmt);
+
+//spiders
+$id=2;
+$stmt=oci_parse($conn,'BEGIN count_phobi(:id,:spiders);END;');
+		oci_bind_by_name($stmt,':id',$id);
+		oci_bind_by_name($stmt,':spiders',$spiders);
+		oci_execute($stmt);
+		
+//heights
+$id=3;
+$stmt=oci_parse($conn,'BEGIN count_phobi(:id,:heights);END;');
+		oci_bind_by_name($stmt,':id',$id);
+		oci_bind_by_name($stmt,':heights',$heights);
+		oci_execute($stmt);
+		
+?>
 
 
 
-<div class="recent_art content">
-
-		<?php include"../phpDocs/recentArticles.php" ?>
-		<button class="button arrow_left" onclick="next(-1)">&#10094;</button>
-		<button class="button arrow_right" onclick="next(1)">&#10095;</button>
-
-</div>
-
-<div class="media_contact">
+<div class="media_contact" style='margin-top:90px';>
 	<div class="social_media">
 		<i class="icon fa-facebook-official  "></i>
 		<i class="icon fa-instagram"></i>
@@ -209,76 +227,14 @@
   </div>
 </div>
 
+<div class="bestart" style="padding:40px 16px" >
+	<a href="http://localhost/siteFinal/chart/chartPhobias.php"><img src="../photos/commonPhobias.png" style="width:30%;padding-left:35%;"></a>
+</div>
 
-<div class="_articol color" style="padding:20px 16px;margin-top:10px;">
-	<div class="row_padding borduraPhobiGroups" style="border-top:1px solid #ccc" >
-		<div class="continut_articol " >  
-				<h2>Physical Exercise</h2>
-				<p>	One of the most powerful and effective methods for reducing generalized anxiety and overcoming
-					a predisposition to panic attacks is a program of regular, vigorous exercise. You have
-					panic attacks when your body’s natural fight-or-flight reaction—the sudden surge of adrenaline
-					you experience in response to a realistic threat—becomes excessive or occurs out of
-					context. Exercise is a natural outlet for your body when it is in the fight-or-flight mode of
-					arousal. A majority of my clients who have undertaken a regular exercise program are less
-					vulnerable to panic attacks and, if they do have them, find them to be less severe. Regular
-					exercise also diminishes the tendency to experience anticipatory anxiety toward phobic situations,
-					expediting recovery from all kinds of phobias, ranging from fear of public speaking
-					to fear of being alone. </p>
-		</div>
-    <div class="continut_articol" style="margin-top:80px;">
-		<img class="image " src="../photos/articol3.png" style="width:600px;margin-left:90px;" >
-    </div>
-	
-	<div style="float:left ;padding-right:25px;">								
-			<h3>Preparing for a Fitness Program?</h3>
-				<p>	If you’ve decided you would like to get more exercise, you need to ask yourself whether
-					you are fully ready to do so. There are certain physical conditions that limit the amount and
-					intensity of exercise you should undertake. If your answer to any of the questions below is
-					yes, be sure to consult with your physician before beginning any exercise program. He or she
-					may recommend a program of restricted or supervised exercise appropriate to your needs.
-				</p>
-				<p>	Some individuals are reluctant to take up exercise because the state of physiological
-					arousal accompanying vigorous exercise reminds them too much of the symptoms of panic.
-					If this applies to you, you might want to start out doing forty-five minutes of walking on a
-					daily basis.
-				</p>
-				
-				<p>	Or you can very gradually build up to a more vigorous level of exercise. You might try just
-					two to three minutes of jogging or cycling and then gradually increase the duration of your
-					daily exercise a minute at a time, remembering to stop every time you feel even the slightest
-					association with panic . It might also be helpful to have a support person exercise with you initially. If you feel
-					phobic about exercise, a program of gradual exposure will help you to desensitize to it in the
-					same way you would to any other phobia.
-				</p>
+<div class="bestart" style="padding:40px 16px" >
+	<a href="http://localhost/siteFinal/chart/chartPhobiasAge.php"><img src="../photos/phobiasAge.png" style="width:38%;padding-left:32%;"></a>
+</div>
 
-
-				<h3>Choosing an Exercise Program</h3>
-					<p>	Studies have found differences in the breathing patterns of anxious and shy people as
-						opposed to those who are more relaxed and outgoing. People who are fearful and shy tend
-						to breathe in a shallow fashion from their chest, while those who are more extroverted and
-						relaxed breathe more slowly, deeply, and from their abdomens.
-					</p>
-					<p>	Before reading on, take a minute to notice how you are breathing right now. Is your
-						breath slow or rapid? Deep or shallow? Does it center around a point high in your chest or
-						down in your abdomen? You might also notice changes in your breathing pattern under
-						stress versus when you are more relaxed.
-					</p>
-
-					<h3>Shallow, Chest-Level Breathing</h3>
-						<p>	There are many types of exercise to choose from. Deciding what form of exercise to do depends
-							upon your objectives. For reducing generalized anxiety and/or a proneness to panic, aerobic
-							exercise such as running, brisk walking, cycling outdoors or on a stationary bike, swimming, or
-							aerobic dancing is the most effective for many individuals. Aerobic exercise requires sustained
-							activity of your larger muscles. It reduces skeletal muscle tension and increases cardiovascular
-							conditioning-the capacity of your circulatory system to deliver oxygen to your tissues and cells
-							with greater efficiency. Regular aerobic exercise will reduce stress and increase your stamina.
-						</p>
-						
-						<p>	Before reading on, take a minute to notice how you are breathing right now. Is your
-							breath slow or rapid? Deep or shallow? Does it center around a point high in your chest or
-							down in your abdomen?
-						</p>
-   </div>
   </div>
 </div>
 
@@ -288,7 +244,7 @@
 
 
 <script>
-
+	
 	var menu = document.getElementById("menu");
 
 	function open_menu() {

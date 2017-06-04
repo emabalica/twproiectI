@@ -17,9 +17,10 @@
 		 
 		 if(strcmp($role,"admin")==0){
 		  print"
+		  <a href='http://localhost/siteFinal/admin/charts.php' class='item button'><i class='icon user_icon'></i>CHARTS</a>
 		  <a onclick=\"document.getElementById('delete').style.display='block'\" class='item button'><i class='icon quiz_icon'></i>DELETE POST</a>
           <a onclick=\"document.getElementById('post').style.display='block'\" class='item button'><i class='icon user_icon'></i>ADD POST</a>
-	  <a href='http://localhost/siteFinal/phpDocs/logout.php' class='item button '><i class='icon user_icon' ></i>LOGOUT</a>";}}
+		  <a href='http://localhost/siteFinal/phpDocs/logout.php' class='item button '><i class='icon user_icon' ></i>LOGOUT</a>";}}
 	
 	else
 	

@@ -101,7 +101,9 @@ if (!$conn) {
 
   if(strcmp($role,"admin")==0){
  print " <a onclick=\"document.getElementById('delete').style.display='block';close_menu()\" onclick=\"close_menu()\" class=' item button'>DELETE POST</a>
-  <a onclick=\"document.getElementById('post').style.display='block';close_menu()\" onclick=\"close_menu()\" class=' item button'>ADD POST</a>";}
+		 <a onclick=\"document.getElementById('post').style.display='block';close_menu()\" onclick=\"close_menu()\" class=' item button'>ADD POST</a>
+		 <a href='http://localhost/siteFinal/admin/charts.php' class='item button'><i class='icon user_icon'></i>CHARTS</a>
+		 <a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
    }
   else{
 	    print" <a onclick=\"document.getElementById('quizpart1').style.display='block';close_menu()\" onclick=\"close_menu()\" class=' item button'>PHOBIA QUIZ</a>
