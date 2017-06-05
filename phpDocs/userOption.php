@@ -12,7 +12,7 @@
 		  
 		  if(strcmp($role,"user")==0){
 	  print "<a onclick=\"document.getElementById('quizpart1').style.display='block'\" class='item button'><i class='icon quiz_icon'></i>PHOBIA QUIZ</a>";
-      print "<a href='http://localhost/siteFinal/account.php' class='item button '><i class='icon user_icon' ></i>ACCOUNT</a>";
+      print "<a href='http://localhost/siteFinal/friends/seeFriends.php' class='item button '><i class='icon user_icon' ></i>FRIENDS</a>";
 	  print "<a href='http://localhost/siteFinal/phpDocs/logout.php' class='item button '><i class='icon user_icon' ></i>LOGOUT</a>";}
 		 
 		 if(strcmp($role,"admin")==0){

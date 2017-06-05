@@ -143,7 +143,7 @@
         <span onclick="document.getElementById('post').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
       </div>
 	  
-			<form style="padding:0.01em 16px" action="phpDocs/post.php" method='post'>
+			<form style="padding:0.01em 16px" action="../admin/post.php" method='post'>
 				<div style="margin-top:16px!important;margin-bottom:16px!important">
 					<label><b>Select the type of posting:</b></label>
 						<select class="select" name="art_type">
@@ -175,7 +175,7 @@
         <span onclick="document.getElementById('delete').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
       </div>
      
-	    <form style="padding:0.01em 16px" action="phpDocs/delete.php" method='post'>
+	    <form style="padding:0.01em 16px" action="../admin/delete.php" method='post'>
 				<div style="margin-top:16px!important;margin-bottom:16px!important">
 					<label><b>Select the type of posting:</b></label>
 						<select class="select" id="sel1">

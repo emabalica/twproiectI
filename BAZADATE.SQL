@@ -6,6 +6,49 @@
 	ROLE VARCHAR2(30), 
 	NR_STELUTE )
 
+CREATE TABLE friends(
+id_user int REFERENCES userstw(user_id) not null,
+id_friend int REFERENCES userstw(user_id) not null,
+primary key(id_user,id_friend))
+
+select * from userstw where fobie='height'
+
+create or replace procedure see_friend_exist(idUser int,idFriend int,msg OUT int) as
+begin
+select count(*)into msg from friends where id_user=idUser and id_friend=idFriend;
+end see_friend_exist;
+
+
+CREATE TABLE fobii_statistici(
+provocare_id int REFERENCES provocari_nume(provocare_id) not null,
+varsta varchar2(100))
+
+
+
+create or replace procedure count_phobi(id_nr int,msg OUT int)as
+begin
+    select count(*) into msg from fobii_statistici where provocare_id=id_nr;
+end count_phobi;
+
+create or replace procedure count_phobi_age(id_nr int,msg1 OUT int,msg2 OUT int,msg3 OUT int)as
+begin
+    select count(*) into msg1 from fobii_statistici where provocare_id=id_nr and varsta='under 18';
+    select count(*) into msg2 from fobii_statistici where provocare_id=id_nr and varsta=' 25 to 30';
+    select count(*) into msg3 from fobii_statistici where provocare_id=id_nr and varsta=' 31 to 40';
+ 
+
+end count_phobi_age;
+
+
+
+create or replace procedure inc_like_art(id int) as
+nr int;
+begin
+select nr_reads into nr from myarticles where id_art=id;
+nr:=nr+1;
+UPDATE MYARTICLES SET NR_READS=nr where id_art=id;
+end inc_like_art;
+
 
 	create table myarticles(
 id_art int not null primary key ,

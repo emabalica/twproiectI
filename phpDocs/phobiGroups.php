@@ -46,7 +46,7 @@
 				
 				print "	</div>
 						<div class='containerPhobiGroups'>
-						<a href='http://localhost/siteFinal/spider/fearOfSpider.php'><img src='../photos/fearSpider.png' style='width:40%;padding-left:30%;'></a>
+						<a href='http://localhost/siteFinal/spiderFear/FearSpiderStart.php'><img src='../photos/fearSpider.png' style='width:40%;padding-left:30%;'></a>
 						</div>
 						<div class='paddingPhobi '>";
 
@@ -79,7 +79,7 @@
 
 				print "	</div>
 						<div class='containerPhobiGroups'>
-							<a href='http://localhost/siteFinal/height/fearOfHeight.php'><img src='../photos/fearHeights.png' style='width:40%;padding-left:30%;'><a>
+							<a href='http://localhost/siteFinal/heightsFear/heightsFearStart.php'><img src='../photos/fearHeights.png' style='width:40%;padding-left:30%;'><a>
 						</div>
 						<div class='paddingPhobi'>";
 
