@@ -210,7 +210,7 @@
 
 <?php
 
-$query=oci_parse($conn,'select * from friends f join userstw u on f.id_user=u.user_id where id_user=:id');
+$query=oci_parse($conn,'select * from friends where id_user=:id');
 		oci_bind_by_name($query,':id',$_SESSION['login_user']);
 		oci_execute($query);
 
@@ -218,12 +218,22 @@ $query=oci_parse($conn,'select * from friends f join userstw u on f.id_user=u.us
 						<h3 class='borduraPhobiGroups ' style='color:green'>Get in touch with your friends</h3>
 				   </div>";
 		print "<div class='paddingPhobi' >";
+
 			
 		while($row1 = oci_fetch_array($query, OCI_RETURN_NULLS+OCI_ASSOC)){
+			
+			$query2=oci_parse($conn,'select * from USERSTW where user_id=:id');
+			oci_bind_by_name($query2,':id',$row1['ID_FRIEND']);
+			oci_execute($query2);
 	
+				while($row2 = oci_fetch_array($query2, OCI_RETURN_NULLS+OCI_ASSOC)){
+				
 				print "	<div class='singleContactDiv marginPhobi'>
-							<img src='../".$row1['PROFILE_PIC']."'style='width:40%;border-radius:50%;margin-top:16px!important;'>
-							<h3>Name:".$row1['USER_NAME']."</h3><p><h3>Mail:".$row1['MAIL']."</h3></p></div>";}
+							<img src='../".$row2['PROFILE_PIC']."'style='width:40%;border-radius:50%;margin-top:16px!important;'>
+							<h3>Name:".$row2['USER_NAME']."</h3><p><h3>Mail:".$row2['MAIL']."</h3></p></div>";}
+		
+		
+		}
 		print "</div>";
 ?>
 
