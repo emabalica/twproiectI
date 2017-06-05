@@ -28,9 +28,21 @@
 	
 				print "	<div class='singleContactDiv marginPhobi'>
 							<img src='../".$row1['PROFILE_PIC']."'style='width:40%;border-radius:50%;margin-top:16px!important;'>
-							<h3>".$row1['USER_NAME']."</h3>
-							<p><button class='button decorate block'>Add friend</button></p>
-						</div>";}
+							<h3>".$row1['USER_NAME']."</h3>";
+							$stmt=oci_parse($conn,'BEGIN see_friend_exist(:id,:id2,:rasp);END;');
+						oci_bind_by_name($stmt,':id',$_SESSION['login_user']);
+						oci_bind_by_name($stmt,':id2',$row1['USER_ID']);
+						oci_bind_by_name($stmt,':rasp',$rasp);
+						oci_execute($stmt);
+						if($rasp==0)
+							print "<p><a href='http://localhost/siteFinal/friends/addFriends".$row1['USER_ID'].".php'><button class='button decorate block'>Add friend</button></a></p>";
+						else
+							print "<p><a href='http://localhost/siteFinal/friends/seeFriends.php'><button class='button decorate block'>See friend</button></a></p>";
+
+							
+					
+
+						print "</div>";}
 				
 				print "	</div>
 						<div class='containerPhobiGroups'>
@@ -47,9 +59,23 @@
 	 
 				print "<div class='singleContactDiv marginPhobi'>
 							<img src='../".$row1['PROFILE_PIC']."'style='width:40%;border-radius:50%;margin-top:16px!important;'>
-							<h3>".$row1['USER_NAME']."</h3>
-							<p><button class='button decorate block'>Add friend</button></p>
-						</div>";}
+							<h3>".$row1['USER_NAME']."</h3>";
+							
+						
+						$stmt=oci_parse($conn,'BEGIN see_friend_exist(:id,:id2,:rasp);END;');
+						oci_bind_by_name($stmt,':id',$_SESSION['login_user']);
+						oci_bind_by_name($stmt,':id2',$row1['USER_ID']);
+						oci_bind_by_name($stmt,':rasp',$rasp);
+						oci_execute($stmt);
+						if($rasp==0)
+							print "<p><a href='http://localhost/siteFinal/friends/addFriends".$row1['USER_ID'].".php'><button class='button decorate block'>Add friend</button></a></p>";
+						else
+							print "<p><a href='http://localhost/siteFinal/friends/seeFriends.php'><button class='button decorate block'>See friend</button></a></p>";
+
+							
+					
+
+						print "</div>";}
 
 				print "	</div>
 						<div class='containerPhobiGroups'>
@@ -67,9 +93,22 @@
 		
 				print " <div class='singleContactDiv marginPhobi'>
 						<img src='../".$row1['PROFILE_PIC']."'style='width:40%;border-radius:50%;margin-top:16px!important;'>
-						<h3>".$row1['USER_NAME']."</h3>
-						<p><button class='button decorate block'>Add friend</button></p>
-						</div>";}
+						<h3>".$row1['USER_NAME']."</h3>";
+						
+						$stmt=oci_parse($conn,'BEGIN see_friend_exist(:id,:id2,:rasp);END;');
+						oci_bind_by_name($stmt,':id',$_SESSION['login_user']);
+						oci_bind_by_name($stmt,':id2',$row1['USER_ID']);
+						oci_bind_by_name($stmt,':rasp',$rasp);
+						oci_execute($stmt);
+						if($rasp==0)
+							print "<p><a href='http://localhost/siteFinal/friends/addFriends".$row1['USER_ID'].".php'><button class='button decorate block'>Add friend</button></a></p>";
+						else
+							print "<p><a href='http://localhost/siteFinal/friends/seeFriends.php'><button class='button decorate block'>See friend</button></a></p>";
+
+							
+					
+
+						print "</div>";}
 		
 		print "</div>";}
 		}
