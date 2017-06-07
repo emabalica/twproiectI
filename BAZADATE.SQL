@@ -209,3 +209,43 @@ OPEN lista_ID ; -- aceste valori pot fi calculate de codul PLSQL
   id4:=v_lista(4); 
   
 end best_read;
+
+INSERT INTO MYPHOBIAS VALUES(1,'Performance Anxiety','photos/speakingFear.png','http://localhost/siteFinal/fears/fear1.php','14-MAR-2017',14,
+'The fear of performing or speaking in front of an audience is the most common phobia, affecting up to 70 percent of the population worldwide. In the context of fear of public speaking, it’s sometimes referred to as glossophobia. It’s a complex fear and can involve any one or all of the following components:Fear of being judged as awkward ,fear of underperforming as in a musical recital ');
+
+INSERT INTO MYPHOBIAS VALUES(2,'Fear of Flying','photos/1.png','http://localhost/siteFinal/fears/fear2.php','15-APR-2017',14,
+'Fear of flying is the second most common phobia (after fear of public speaking) and affects about 20 percent of the population, who either avoid flying or do so with discomfort. It can cripple a person’s life in major ways, such as avoiding desirable jobs that require flying or going on vacations to visit family and friends. requently, the fear of flying overlaps with other phobias');
+
+INSERT INTO MYPHOBIAS VALUES(3,'Claustrophobia','photos/Claustrophobia.png','http://localhost/siteFinal/fears/fear3.php','16-OCT-2016',14,
+'Most people know that claustrophobia refers to a fear of being closed in and having no escape.It can take a variety of forms, including fear of small and/or crowded rooms, fear of being stuck in traffic, fear of tunnels, fear of subways, fear of being stuck waiting in line, or fear of sitting in a chair while receiving a procedure. Many people who fear flying are afraid of confinement');
+
+
+
+INSERT INTO MYPHOBIAS VALUES(4,'Hypochondria','photos/Hypochondria.png','http://localhost/siteFinal/fears/fear4.php','18-JAN-2016',14,
+'Hypochondria is defined as excessive worry about having a serious disease, even after medical reassurance. Often a particular symptom, such as gastric discomfort, chronic headaches is taken to be evidence of a life-threatening disease. Having a bad headache might be taken as evidence of a brain tumor, or a chronic cough as evidence for cancer. Some people continuously seek out  doctors ');
+
+
+INSERT INTO MYPHOBIAS VALUES(5,'Dental Phobia','photos/DentalPhobia.png','http://localhost/siteFinal/fears/fear5.php','19-JUL-2016',14,
+'Dental phobia can involve fear and avoidance of dentistry in general, or a more specific fear about having a particular dental procedure. In some cases, it appears that the problem is not a phobia at all but symptoms of post-traumatic stress disorder in response to a previous, traumatic dental experience. More than half of adults in America experience anxiety about going to the dentist');
+
+
+INSERT INTO MYPHOBIAS VALUES(6,'Blood/Injection Phobia','photos/InjectionPhobia.png','http://localhost/siteFinal/fears/fear6.php','20-MAR-2017',14,
+'Fears of blood, injuries associated with blood, and injections often go together.  About 70 percent of people who are phobic of blood also have a phobia of injections.  On the other hand, only about 30 percent of injection/needle phobics have fears of blood and injury. A phobia of injections can have very serious health consequences , if you refuse to receive blood tests ');
+
+
+INSERT INTO MYPHOBIAS VALUES(7,'Fear of Heights','photos/3.png','http://localhost/siteFinal/fears/fear7.php','24-DEC-2017',14,
+'he fear of heights, or acrophobia, is another very common phobia. Frequently, it combines with other phobias, such as the fear of flying, fear of riding elevators, or fear of driving over a high bridge. The most frequent form of the fear is being high up in a building.
+Sometimes the fear of heights is confused with vertigo. Vertigo is a sensation of spinning caused by a medical condition');
+
+
+INSERT INTO MYPHOBIAS VALUES(8,'Animal and Insect Phobias','photos/AnimalandInsectPhobias.png','http://localhost/siteFinal/fears/fear8.php','14-APR-2017',14,
+'Phobias of specific types of animals or insects abound. The fear can be of snakes, mice, dogs, cats, certain birds, spiders, bees or cockroaches, to name some of the most common examples. People with this type of phobia avoid not only a particular animal/insect but areas where they believe they might be exposed to the feared creature.Even seeing a picture will lead to a panic attack.');
+
+
+INSERT INTO MYPHOBIAS VALUES(9,'Fear of Death','photos/FearofDeath.png','http://localhost/siteFinal/fears/fear9.php','15-JUN-2017',14,
+'Death anxiety is the morbid, abnormal, or persistent fear of one s own death. One source defines death anxiety as a "feeling of dread, apprehension or solicitude (anxiety) when one thinks of the process of dying, or ceasing to ‘be’".It is also referred to as thanatophobia (fear of death), and is distinguished from necrophobia, which is a specific fear of dead or dying persons or things ');
+
+INSERT INTO MYPHOBIAS VALUES(10,'Fear of Snakes','photos/snake.png','http://localhost/siteFinal/fears/fear10.php','20-MAR-2017',14,
+'The fear of snakes or Ophidiophobia is the second most common phobia in the world. Nearly 1/3rd of adult humans are believed to have an intense fear of snakes.Most people with Ophidiophobia can lead normal lives as they do not have to confront the object of their fears under normal circumstances. However, for people with severe Ophidiophobia,the mere mention can lead to an intense fear ');
+
+

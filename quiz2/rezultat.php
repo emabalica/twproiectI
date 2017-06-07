@@ -218,18 +218,7 @@ session_start();?>
   </div>
 </div>
 
-<!-- Most read art -->
-<div class="bestart" style="padding:40px 16px" >
-	<img src="../photos/bestarticles.png" style="width:30%;padding-left:35%;">
-		<div class="container " style="margin-top:64px">  
-			<?php include '../phpDocs/mostReadArticles.php' ?>
-		</div>
-</div>
 
-
-<!--Phobia groups!-->
-
- <?php include '../phpDocs/phobiGroups.php'?>
   
 
 <div class="_articol color" style="padding:20px 16px;margin-top:10px;">

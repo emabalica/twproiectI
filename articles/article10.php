@@ -29,7 +29,7 @@
 		<a href="http://localhost/siteFinal/home/home.php" class=" item button "><i class="icon home_icon" ></i>ABOUT</a>
 		<a href="http://localhost/siteFinal/articles/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
 		<a href="http://localhost/siteFinal/phobias.php" class=" item button"><i class="icon art_icon"></i> PHOBIAS</a>
-	  
+		 <a href="http://localhost/siteFinal/quiz2/test.php" class=" item button"><i class="icon art_icon"></i> PHOBIA KNOWLEDGE TEST</a>
 		<a onclick="document.getElementById('quizpart1').style.display='block'" class='item button'><i class='icon quiz_icon'></i>PHOBIA QUIZ</a>
 			 <a onclick="document.getElementById('form').style.display='block'" class='item button'><i class='icon user_icon'></i>LOGIN/SINGUP</a>'		  
 		</div>

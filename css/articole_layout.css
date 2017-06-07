@@ -2,7 +2,7 @@
 
 ._articol:after,._articol:before,.row_padding:after,.row_padding:before{content:"";display:table;clear:both}
 
-.color{color:#000;background-color:white}
+.color{color:#000!important;background-color:white!important}
 
 .row_padding,.row_padding>.w3-col{padding:0 8px; }
 

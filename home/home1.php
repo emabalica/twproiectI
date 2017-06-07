@@ -1,4 +1,4 @@
-<?php include '../phpDocs/dbcon.php'?> <!--Physical Exercise-->
+<?php include '../phpDocs/dbcon.php'?>
 
 <!DOCTYPE html>
 
@@ -30,7 +30,6 @@
 		<a href="http://localhost/siteFinal/home/home.php" class=" item button "><i class="icon home_icon" ></i>ABOUT</a>
 		<a href="http://localhost/siteFinal/articles/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
 		<a href="http://localhost/siteFinal/phobias.php" class=" item button"><i class="icon art_icon"></i> PHOBIAS</a>
-		 <a href="http://localhost/siteFinal/quiz2/test.php" class=" item button"><i class="icon art_icon"></i> PHOBIA KNOWLEDGE TEST</a>
 	  
 		<?php include '../phpDocs/userOption.php'?>
 		  
@@ -67,10 +66,10 @@
 
   if(strcmp($role,'admin')==0){
 		print"	<a onclick=\'document.getElementById('delete').style.display='block';\' onclick=\'close_menu()\' class='item button'>DELETE POST</a>
-				<a onclick=\'document.getElementById('post').style.display='block';\' onclick=\'close_menu()\' class='item button'>ADD POST</a>
+				<a onclick=\'document.getElementById('post').style.display='block';\' onclick=\'close_menu()\' class='item button'>ADD POST</a>		
 				<a href='http://localhost/siteFinal/admin/charts.php' class='item button'><i class='icon user_icon'></i>CHARTS</a>
 				<a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
-
+				
    }
    
   else{
@@ -80,6 +79,7 @@
 ?>
  
  </nav>
+
 
 
 <!--LOGIN/SINGUP FORM-->
@@ -106,7 +106,6 @@
 
     </div>
   </div>
-</div>
 
 <!--QUIZ FORM-->
  <div id="quizpart1" class="form">
@@ -139,32 +138,38 @@
 <!--ADD FORM-->
 <div id="post" class="form">
     <div class="form-content" style="max-width:600px">
+
       <div style="text-align:center!important"><br>
         <span onclick="document.getElementById('post').style.display='none'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
       </div>
-	  
-			<form style="padding:0.01em 16px" action="../admin/post.php" method='post'>
-				<div style="margin-top:16px!important;margin-bottom:16px!important">
-					<label><b>Select the type of posting:</b></label>
-						<select class="select" name="art_type">
-							<option>Phobia</option>
-							<option>Article</option>
-						</select>
-					<label><b>Title</b></label>
-							<input class="text" type="text" placeholder="title" name="title" required>
-					<label><b>Date</b></label>
-							<input class="text" type="text" placeholder="date" name="date" required>
-					<label><b>Path img</b></label>
-							<input class="text" type="text" placeholder="img" name="img" required>
-					<label><b>Preview</b></label>
-							<textarea class="text" type="text" placeholder="preview" name="preview" required></textarea>
-					<label><b>Article</b></label>
-							<textarea style="height:50px;" class="text" type="text"  name="article" required></textarea>
-					<button class="button decorate " type="submit">Post</button>
-				</div>
-			</form>
-	  </div>
+     
+	    <form style="padding:0.01em 16px" action="../admin/post.php" method='post'>
+        <div style="margin-top:16px!important;margin-bottom:16px!important">
+          <label><b>Select the type of posting:</b></label>
+          <select  class="select" name="art_type">
+          <option>Phobia</option>
+          <option>Article</option>
+          </select>
+		  <label><b>Title</b></label>
+          <input class="text" type="text" placeholder="title" name="title" required>
+          <label><b>Date</b></label>
+          <input class="text" type="text" placeholder="date" name="date" required>
+          <label><b>Path img</b></label>
+          <input class="text" type="text" placeholder="img" name="img" required>
+		  <label><b>Preview</b></label>
+          <textarea class="text" type="text" placeholder="preview" name="preview" required></textarea>
+		  <label><b>Article</b></label>
+          <textarea style="height:50px;" class="text" type="text"  name="article" required></textarea>
+		   
+          <button class="button decorate " type="submit">Post</button>
+		</div>
+      </form>
+
+
+    </div>
   </div>
+
+
 
 
 
@@ -178,7 +183,7 @@
 	    <form style="padding:0.01em 16px" action="../admin/delete.php" method='post'>
 				<div style="margin-top:16px!important;margin-bottom:16px!important">
 					<label><b>Select the type of posting:</b></label>
-						<select class="select" id="sel1">
+						<select class="select" id="sel1" name='art_type'>
 							<option>Phobia</option>
 							<option>Article</option>
 						</select>
@@ -210,75 +215,79 @@
   </div>
 </div>
 
+<!-- Most read art -->
+<div class="bestart" style="padding:40px 16px" >
+	<img src="../photos/bestarticles.png" style="width:30%;padding-left:35%;">
+		<div class="container " style="margin-top:64px">  
+			<?php include '../phpDocs/mostReadArticles.php' ?>
+		</div>
+</div>
+
+
+<!--Phobia groups!-->
+
+ <?php include '../phpDocs/phobiGroups.php'?>
+  
 
 <div class="_articol color" style="padding:20px 16px;margin-top:10px;">
 	<div class="row_padding borduraPhobiGroups" style="border-top:1px solid #ccc" >
 		<div class="continut_articol " >  
-				<h2>Physical Exercise</h2>
-				<p>	One of the most powerful and effective methods for reducing generalized anxiety and overcoming
-					a predisposition to panic attacks is a program of regular, vigorous exercise. You have
-					panic attacks when your body’s natural fight-or-flight reaction—the sudden surge of adrenaline
-					you experience in response to a realistic threat—becomes excessive or occurs out of
-					context. Exercise is a natural outlet for your body when it is in the fight-or-flight mode of
-					arousal. A majority of my clients who have undertaken a regular exercise program are less
-					vulnerable to panic attacks and, if they do have them, find them to be less severe. Regular
-					exercise also diminishes the tendency to experience anticipatory anxiety toward phobic situations,
-					expediting recovery from all kinds of phobias, ranging from fear of public speaking
-					to fear of being alone. </p>
+				<h3>What Is Anxiety?</h3>
+				<p><b><i>"But do not distress yourself with imaginings. Many fears are born of fatigue and loneliness.
+						  Beyond a wholesome discipline, be gentle with yourself." </i>Max Ehrmann</b></p>
+				<p>	You can better understand the nature of anxiety by looking at both what it is and what it is not. 
+					For example, anxiety can be distinguished from fear in several ways. When you are afraid, your fear 
+					is usually directed toward some concrete external object or situation. The event that you fear usually 
+					is within the bounds of possibility. You might fear not meeting a deadline, failing an exam, 
+					being unable to pay your bills, or being rejected by someone you want to please. When you experience 
+					anxiety, on the other hand, you often can't specify what it is you're anxious about. </p>
 		</div>
     <div class="continut_articol" style="margin-top:80px;">
-		<img class="image " src="../photos/articol3.png" style="width:600px;margin-left:90px;" >
+		<img class="image " src="../photos/relax.gif" alt="Buildings" width="700" height="394">
     </div>
 	
 	<div style="float:left ;padding-right:25px;">								
-			<h3>Preparing for a Fitness Program?</h3>
-				<p>	If you’ve decided you would like to get more exercise, you need to ask yourself whether
-					you are fully ready to do so. There are certain physical conditions that limit the amount and
-					intensity of exercise you should undertake. If your answer to any of the questions below is
-					yes, be sure to consult with your physician before beginning any exercise program. He or she
-					may recommend a program of restricted or supervised exercise appropriate to your needs.
-				</p>
-				<p>	Some individuals are reluctant to take up exercise because the state of physiological
-					arousal accompanying vigorous exercise reminds them too much of the symptoms of panic.
-					If this applies to you, you might want to start out doing forty-five minutes of walking on a
-					daily basis.
-				</p>
-				
-				<p>	Or you can very gradually build up to a more vigorous level of exercise. You might try just
-					two to three minutes of jogging or cycling and then gradually increase the duration of your
-					daily exercise a minute at a time, remembering to stop every time you feel even the slightest
-					association with panic . It might also be helpful to have a support person exercise with you initially. If you feel
-					phobic about exercise, a program of gradual exposure will help you to desensitize to it in the
-					same way you would to any other phobia.
-				</p>
+			<p>	The focus of anxiety 
+				is more internal than external. It seems to be a response to a vague, distant, or even unrecognized danger. 
+				You might be anxious about "losing control" of yourself or some situation. Or you might feel a vague anxiety 
+				about "something bad happening".Anxiety affects your whole being. It is a physiological, behavioral, and psychological reaction all at once. On a physiological level, anxiety may include bodily reactions such as rapid heartbeat, muscle tension, queasiness, dry mouth, or sweating. On a behavioral level, it can sabotage your ability to act, express yourself, or deal with certain everyday situations.</p>
+			<p>	Anxiety can appear in different forms and at different levels of intensity. It can range in
+				severity from a mere twinge of uneasiness to a full-blown panic attack marked by heart palpitations,
+				disorientation, and terror. Anxiety that is not connected with any particular situation, that
+				comes "out of the blue", is called free-floating anxiety or, in more severe instances, a spontaneous
+				panic attack. The difference between an episode of free-floating anxiety and a spontaneous panic
+				attack can be defined by whether you experience four or more of the following symptoms at the
+				same time (the occurrence of four or more symptoms defines a panic attack):
+			</p>
+			
+			<ul>
+				<li>Shortness of breath</li>
+				<li>Heart palpitations</li>
+				<li>Trembling or shaking</li>
+				<li>Sweating</li>
+				<li>Numbness</li>
+				<li>Dizziness</li>
+			</ul>
+			
+			<p>	If your anxiety arises only in response to a specific situation, it is called situational anxiety
+				or phobic anxiety. Situational anxiety is different from everyday fear in that it tends to be out
+				of proportion or unrealistic. If you have a disproportionate apprehension about driving on
+				freeways, going to the doctor, or confronting your spouse, this may qualify as situational
+				anxiety. Situational anxiety becomes phobic when you actually start to avoid the situation: if
+				you give up driving on freeways, going to doctors, or confronting your spouse altogether. In	
+				other words, phobic anxiety is situational anxiety that includes persistent avoidance of the
+				situation.
+			</p>
+			
+			<p>	There is an important difference between spontaneous anxiety (or panic) and anticipatory
+				anxiety (or panic). Spontaneous anxiety tends to come out of the blue, peaks to a
+				high level very rapidly, and then subsides gradually. The peak is usually reached within five
+				minutes, followed by a gradual tapering-off period of an hour or more. Anticipatory anxiety,
+				on the other hand, tends to build up more gradually in response to encountering-or simply
+				thinking about-a threatening situation and then usually falls off quickly. You may "worry
+				yourself into a frenzy" about something for an hour or more and then let go of the worry as
+				you find something else to occupy your mind.</p>
 
-
-				<h3>Choosing an Exercise Program</h3>
-					<p>	Studies have found differences in the breathing patterns of anxious and shy people as
-						opposed to those who are more relaxed and outgoing. People who are fearful and shy tend
-						to breathe in a shallow fashion from their chest, while those who are more extroverted and
-						relaxed breathe more slowly, deeply, and from their abdomens.
-					</p>
-					<p>	Before reading on, take a minute to notice how you are breathing right now. Is your
-						breath slow or rapid? Deep or shallow? Does it center around a point high in your chest or
-						down in your abdomen? You might also notice changes in your breathing pattern under
-						stress versus when you are more relaxed.
-					</p>
-
-					<h3>Shallow, Chest-Level Breathing</h3>
-						<p>	There are many types of exercise to choose from. Deciding what form of exercise to do depends
-							upon your objectives. For reducing generalized anxiety and/or a proneness to panic, aerobic
-							exercise such as running, brisk walking, cycling outdoors or on a stationary bike, swimming, or
-							aerobic dancing is the most effective for many individuals. Aerobic exercise requires sustained
-							activity of your larger muscles. It reduces skeletal muscle tension and increases cardiovascular
-							conditioning-the capacity of your circulatory system to deliver oxygen to your tissues and cells
-							with greater efficiency. Regular aerobic exercise will reduce stress and increase your stamina.
-						</p>
-						
-						<p>	Before reading on, take a minute to notice how you are breathing right now. Is your
-							breath slow or rapid? Deep or shallow? Does it center around a point high in your chest or
-							down in your abdomen?
-						</p>
    </div>
   </div>
 </div>
@@ -318,3 +327,7 @@
 	}
 
 	</script>
+
+
+</body>
+</html>

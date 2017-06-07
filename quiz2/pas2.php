@@ -218,19 +218,7 @@ session_start();?>
   </div>
 </div>
 
-<!-- Most read art -->
-<div class="bestart" style="padding:40px 16px" >
-	<img src="../photos/bestarticles.png" style="width:30%;padding-left:35%;">
-		<div class="container " style="margin-top:64px">  
-			<?php include '../phpDocs/mostReadArticles.php' ?>
-		</div>
-</div>
 
-
-<!--Phobia groups!-->
-
- <?php include '../phpDocs/phobiGroups.php'?>
-  
 
 <div class="_articol color" style="padding:20px 16px;margin-top:10px;">
 	<div class="row_padding borduraPhobiGroups" style="border-top:1px solid #ccc" >
@@ -259,7 +247,7 @@ $_SESSION['score']='0';
 <form action='pas3.php?id=2' method='post' id='quizForm' id='2'>
 
 
-	<ol>
+	<ul>
     
     
 				<li>
@@ -340,7 +328,7 @@ $_SESSION['score']='0';
 					</div>
 				</li>
 
-    </ol>
+    </ul>
      <input type='submit' value='Continue' />
     
 </form>
@@ -361,7 +349,7 @@ $_SESSION['score']='0';
 <form action='pas3.php?id=1' method='post' id='quizForm' id='1'>
 
 
-	<ol>
+	<ul>
     
    
     	<li>
@@ -442,7 +430,7 @@ $_SESSION['score']='0';
         <label for='answerFourC'>C) the fear of cats</label>
         </div>
         </li>
-    </ol>
+    </ul>
      <input type='submit' value='Continue' />
     
 </form>";
@@ -452,7 +440,7 @@ $_SESSION['score']='0';
 		{echo "<form action='pas3.php?id=3' method='post' id='quizForm' id='3'>
 
 
-	<ol>
+	<ul>
     
    
     	<li>
@@ -532,7 +520,7 @@ $_SESSION['score']='0';
 				<label for='answerFourC'>C) The fear of sitting</label>
 				</div>
 			</li>
-    </ol>
+    </ul>
      <input type='submit' value='Continue' />
     
 </form>";}
@@ -550,7 +538,7 @@ $_SESSION['score']='0';
 <form action='pas3.php?id=1' method='post' id='quizForm' id='1'>
 
 
-	<ol>
+	<ul>
     
    
     	<li>
@@ -631,7 +619,7 @@ $_SESSION['score']='0';
         <label for='answerFourC'>C) the fear of cats</label>
         </div>
         </li>
-    </ol>
+    </ul>
      <input type='submit' value='Continue' />
     
 </form>";
@@ -644,7 +632,7 @@ $_SESSION['score']='0';
 <form action='pas3.php?id=2' method='post' id='quizForm' id='2'>
 
 
-	<ol>
+	<ul>
     
     
 				<li>
@@ -725,7 +713,7 @@ $_SESSION['score']='0';
 					</div>
 				</li>
 
-    </ol>
+    </ul>
      <input type='submit' value='Continue' />
     
 </form>
