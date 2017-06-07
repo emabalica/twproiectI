@@ -1,54 +1,3 @@
-<?php
-
-		$type=$_POST['art_type'];
-		$date=$_POST['date'];
-		$img="photos/";
-		$img.=$_POST['img'];
-		$preview=$_POST['preview'];
-		$article=$_POST['article'];
-		$title=$_POST['title'];
-		
-		
-		$conn = oci_connect("system","STUDENT","localhost/orcl");
-		if (!$conn) {
-		   $m = oci_error();
-		   echo $m['message'], "\n";
-		   exit;
-		}
-
-
-
-		$query=oci_parse($conn,'BEGIN nr_art(:nr); END;');
-		oci_bind_by_name($query,':nr',$nr);
-		oci_execute($query);
-
-
-		$site="http://localhost/siteFinal/articles/article";
-		$site.=$nr;
-		$site.=".php";
-
-		$reads=0;
-
-		if(strcmp($type,'Article')==0){
-			
-			$stmt=oci_parse($conn,'insert into myarticles values(:1,:2,:3,:4,:5,:6,:7)');
-
-		oci_bind_by_name($stmt,':1',$nr);
-		oci_bind_by_name($stmt,':2',$title);
-		oci_bind_by_name($stmt,':3',$img);
-		oci_bind_by_name($stmt,':4',$site);
-		oci_bind_by_name($stmt,':5',$date);
-		oci_bind_by_name($stmt,':6',$reads);
-		oci_bind_by_name($stmt,':7',$preview);
-
-		oci_execute($stmt);
-
-		}
-
-		$stream=nl2br(htmlspecialchars($article));
-
-		ob_start();
-?>
 
 <!DOCTYPE html>
 
@@ -81,8 +30,8 @@
 		<a href="http://localhost/siteFinal/articles/articles.php" class=" item button"><i class="icon art_icon"></i>ARTICLES</a>
 		<a href="http://localhost/siteFinal/phobias.php" class=" item button"><i class="icon art_icon"></i> PHOBIAS</a>
 	  
-		<?php include '../phpDocs/userOption.php'?>
-		  
+		<a onclick="document.getElementById('quizpart1').style.display='block'" class='item button'><i class='icon quiz_icon'></i>PHOBIA QUIZ</a>
+			 <a onclick="document.getElementById('form').style.display='block'" class='item button'><i class='icon user_icon'></i>LOGIN/SINGUP</a>'		  
 		</div>
 	
 		<a href="#" class="item button right hide-menu" onclick="open_menu()">
@@ -97,36 +46,8 @@
   <a href="http://localhost/siteFinal/phobias.php" onclick="close_menu()" class=" item button">PHOBIAS</a>
   
  
-   <?php 
-   
-   
-   if(isset($_SESSION['login_user'])){
-		 
-		  $id=(int)$_SESSION['login_user'];
-		  $query=oci_parse($conn,'select * from userstw where user_id=:id');
-		  oci_bind_by_name($query,':id',$id);
-	      oci_execute($query);
-		  $row1 = oci_fetch_array($query);
-		  $role=$row1['ROLE'];
-  
-  if(strcmp($role,'user')==0){
-		print" 	<a onclick=\'document.getElementById('quizpart1').style.display='block';\' onclick=\'close_menu()\' class='item button'>PHOBIA QUIZ</a>
-				<a href='http://localhost/siteFinal/account.php' onclick=\'close_menu()\' class='item button'>ACCOUNT</a>
-				<a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
-
-  if(strcmp($role,'admin')==0){
-		print"	<a onclick=\'document.getElementById('delete').style.display='block';\' onclick=\'close_menu()\' class='item button'>DELETE POST</a>
-				<a onclick=\'document.getElementById('post').style.display='block';\' onclick=\'close_menu()\' class='item button'>ADD POST</a>
-				<a href='http://localhost/siteFinal/phpDocs/logout.php' onclick=\'close_menu()\' class='item button'>LOGOUT</a>";}
-
-   }
-   
-  else{
-	    print" <a onclick=\'document.getElementById('quizpart1').style.display='block';' onclick=\'close_menu()\' class='item button'>PHOBIA QUIZ</a>
-               <a onclick=\'document.getElementById('form').style.display='block';' onclick=\'close_menu()\' class='item button'>LOGIN/LOGOUT</a>";}
-
-?>
- 
+    <a onclick=\'document.getElementById('quizpart1').style.display='block';' onclick=\'close_menu()\' class='item button'>PHOBIA QUIZ</a>
+               <a onclick=\'document.getElementById('form').style.display='block';' onclick=\'close_menu()\' class='item button'>LOGIN/LOGOUT</a> 
  </nav>
 
 
@@ -243,7 +164,20 @@
 
 <div class="recent_art content">
 
-		<?php include"../phpDocs/recentArticles.php" ?>
+		
+<div class='content mySlides'>
+					   <a href='http://localhost/siteFinal/articles/article10.php'><img class='change' src='../photos/exemplu.png' style='width:100%'></a>
+					   <div class='title'>How to Overcome Phobia
+					   </div></div><div class='content mySlides'>
+					   <a href='http://localhost/siteFinal/articles/article3.php'><img class='change' src='../photos/articol3.png' style='width:100%'></a>
+					   <div class='title'>Physical Exercise
+					   </div></div><div class='content mySlides'>
+					   <a href='http://localhost/siteFinal/articles/article1.php'><img class='change' src='../photos/articol1.png' style='width:100%'></a>
+					   <div class='title'>Recovery
+					   </div></div><div class='content mySlides'>
+					   <a href='http://localhost/siteFinal/articles/article4.php'><img class='change' src='../photos/articol4.png' style='width:100%'></a>
+					   <div class='title'>Coping with Panic Attacks
+					   </div></div>
 		<button class="button arrow_left" onclick="next(-1)">&#10094;</button>
 		<button class="button arrow_right" onclick="next(1)">&#10095;</button>
 
@@ -263,35 +197,50 @@
 	<div class="row_padding borduraPhobiGroups" style="border-top:1px solid #ccc" >
 		<div class="continut_articol " >  
 		
-		<?php
-			 	print "<h3>".$title."</h3>
-					<p class='opacitate'>".$date."</p>
-					<p>".nl2br(htmlspecialchars($preview))."</p>
+		<h3>How to Overcome Phobia</h3>
+					<p class='opacitate'>12-MAY-2017</p>
+					<p><br />
+Clowns. Spiders. Heights. Needles. Flying. What do these things all have in common? They're some of the most common phobias. A phobia is actually an intense form of anxiety with a deep sense of fear to which the body reacts. While severe phobias should be treated with professional therapies and/or medication, you can overcome most mild to moderate phobias and reduce the anxiety<br />
+</p>
 		</div>
 		
 	
 	
 	
 	<div class='continut_articol' style='margin-top:80px;'>
-		<img class='image' src='../".$img."' style='width:400px;margin-left:90px;' >
-    </div>";
-	
-	$lungimePreview=strlen($preview);
-	$lungimeArticle=strlen($article);
-	
-	
-	print "	<div style='float:left ;padding-right:25px;'>								
-			<p>".nl2br(htmlspecialchars(substr($article,$lungimePreview,$lungimeArticle)))."</p>
+		<img class='image' src='../photos/exemplu.png' style='width:400px;margin-left:90px;' >
+    </div>	<div style='float:left ;padding-right:25px;'>								
+			<p>ociated with a phobia.dentify your fear. Really think about what you're afraid of. For example, while you may hate going to the dentist, it might be the use of needles that you're truly afraid of.<br />
+<br />
+Identify your fear. Really think about what you're afraid of. For example, while you may hate going to the dentist, it might be the use of needles that you're truly afraid of. In this case, you'd want to focus on your fear of needles, not the dentist.[1]<br />
+<br />
+    If you're having trouble pinpointing your phobia, write down a list of the things that scare you. You may be able to isolate the true fear.<br />
+<br />
+ Write down your goals. Set tangible, achievable goals. It will also be helpful during treatment to consider the benefits that come from these goals.[2] Write down a variety of goals at different levels. Having small achievements will help you work towards tougher aims.<br />
+<br />
+    The act of writing down your goals can actually help you succeed. You're more likely to write down detailed, achievable goals, rather than vague ones. You'll also be more committed to sticking with them.[3]<br />
+ Make a coping strategy. It's naive to assume that you won't encounter any obstacles. Instead, imagine how you want to react to what frightens you. You could visualize something else, face the fear head on for a set amount of time, or you could distract yourself by doing an activity.<br />
+<br />
+    Realize that your coping strategy should change as you encounter and achieve goals. While you might initially cope by distracting yourself, you may eventually be able to face your phobia for small periods of time.[4]<br />
+<br />
+Know that being afraid is perfectly normal. After all, fear has helped humans survive in many situations. On the other hand, fears may easily turn into phobias, also prevent someone from accomplishing certain things. For example:[5]<br />
+<br />
+    It is normal to feel anxious if you look down from a skyscraper. On the other hand, turning down a dream job just because it happens to be at the top of a skyscraper, is not helping you achieve your goals/dreams.<br />
+    Many people feel anxious about getting shots or having blood drawn. Shots can be painful. It is when someone starts to avoid medical examinations and treatments just because he or she might get a shot, that the fear becomes problematic.<br />
+<br />
+<br />
+Enter the exercise feeling relaxed. While everyone relaxes differently, find something that works for you. You may try simply visualizing a calming scene, releasing tension in your muscles, practicing breathing, or meditation.<br />
+<br />
+    Try to work on a relaxation technique that can be done anywhere at anytime. This way, when you encounter your phobia, you can overcome your fear.<br />
+<br />
+</p>
 			</div>
 	</div>
 </div>
 
 	<div class='footer' style='margin-top:30px; ' >
 			
-	</div>";
-	
-	?>
-	<script>
+	</div>	<script>
 
 	var menu = document.getElementById("menu");
 
@@ -326,11 +275,4 @@
 </html>
 
 
-
-<?php
-$save="C:/xampp/htdocs/siteFinal/articles/article";
-$save.=$nr;
-$save.=".php";
-file_put_contents($save,ob_get_contents());
-?>
 

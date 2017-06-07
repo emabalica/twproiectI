@@ -86,14 +86,15 @@
 <div id="form" class="form">
     <div class="form-content" style="max-width:600px">
       <div style="text-align:center!important"><br>
-			<span onclick="location.href = 'http://localhost/siteFinal/home.php'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
+			<span onclick="location.href = 'http://localhost/siteFinal/home/home.php'" class="button" style="position:absolute;right:0;top:0;color:red!important;background-color:white!important;font-size:24px!important;">&times;</span>
 			<img src="../photos/error.png" style="width:40%;border-radius:50%;margin-top:16px!important">
       </div>
 
 	<form style="padding:0.01em 16px" >
         <div style="margin-top:16px!important;margin-bottom:16px!important">
 			<label><b>Your password or username is not correct.If you don't have an account please register first</b></label>
-			<button class="button decorate " formaction="register.php" type="submit">Log in</button>
+			<button class="button decorate " formaction="singin.php" type="submit">Sing in</button>
+			<button class="button decorate " formaction="register.php" type="submit">Register</button>
 		</div>
     </form>
 

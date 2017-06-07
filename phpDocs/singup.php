@@ -25,11 +25,8 @@ oci_bind_by_name($stmt,':username',$username);
 oci_bind_by_name($stmt,':email',$mail);
 oci_bind_by_name($stmt,':passw',$password);
 oci_bind_by_name($stmt,':mesaj',$mesaj,100);
+oci_execute($stmt);
 
-if(!oci_execute($stmt)){
-	$e=occi_error();
-	trigger_error(htmlentities($e['message'],END_QUOTES),E_USER_ERROR);
-	}
 	
 if(strcmp($mesaj, 'Inregistrare reusita')==0)
 		 header("location: singin.php");

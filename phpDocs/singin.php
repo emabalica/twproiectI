@@ -84,7 +84,7 @@
 
 
 
- <!--REGISTER-->
+ <!--LOGIN-->
 <div id="form" class="form">
     <div class="form-content" style="max-width:600px">
 		<div style="text-align:center!important"><br>
@@ -92,16 +92,16 @@
 			<img src="../photos/login.png" style="width:40%;border-radius:50%;margin-top:16px!important;">
 		</div>
 
-		<form style="padding:0.01em 16px" action="singup.php" method='post'>
-			<div style="margin-top:16px!important;margin-bottom:16px!important">
-				<label><b>Username</b></label>
-					<input class="text" type="text" placeholder=" Username" name="username" required>
-				<label><b>Password</b></label>
-					<input class="text" type="password" placeholder="Password" name="password" required>
-				<label><b>Mail</b></label>
-					<input class="text" type="text" placeholder="Mail" name="mail" required>
-				<button type="submit" class="button decorate ">Register</button>
-			</div>
+		<form style="padding:0.01em 16px"  method='post'>
+        <div style="margin-top:16px!important;margin-bottom:16px!important">
+          <label><b>Username</b></label>
+          <input class="text" type="text" placeholder=" Username" name="username" required>
+          <label><b>Password</b></label>
+          <input class="text" type="password" placeholder="Password" name="password" required>
+      
+          <button formaction="login.php" class="button decorate " type="submit">Login</button>
+		  <button formaction="register.php" type="submit" class="button decorate ">Register</button>
+    </div>
       </form>
 
 
